@@ -1,1 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Le secteur fortifié de Lille — Livre</title>
+<style>
+  :root{
+    --brick:#7B3F3F;
+    --slate:#2E3B3C;
+    --parchment:#F5EFE6;
+    --white:#ffffff;
+    --max-width:1100px;
+    --radius:12px;
+    --shadow: 0 6px 18px rgba(46,59,60,0.08);
+    --ui-font: Inter, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  body{
+    margin:0;
+    font-family:var(--ui-font);
+    background:linear-gradient(180deg, var(--parchment), #F8F7F4 120%);
+    color:var(--slate);
+    padding:32px;
+    display:flex;
+    justify-content:center;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:var(--max-width);
+    background:var(--white);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:1fr 380px;
+    min-height:620px;
+    gap:0;
+  }
+
+  .main{
+    padding:28px 34px;
+  }
+
+  header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:18px;
+  }
+
+  .logo{
+    width:64px;
+    height:64px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--brick),var(--slate));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:700;
+    flex-shrink:0;
+  }
+
+  header h1{
+    font-size:1.15rem;
+    margin:0;
+    color:var(--slate);
+  }
+
+  header p{margin:0; color:#585f5f; font-size:0.95rem}
+
+  /* Promotion */
+  .promo{
+    display:flex;
+    gap:20px;
+    align-items:stretch;
+    margin-top:6px;
+  }
+
+  .promo .cover{
+    width:220px;
+    min-height:320px;
+    border-radius:8px;
+    background: url('couv.jpeg') center/cover no-repeat;
+    box-shadow:0 10px 30px rgba(123,63,63,0.08);
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+  }
+
+  .cover div{
+    background:rgba(0,0,0,0.4);
+    padding:10px;
+    border-radius:5px;
+    color:#fff;
+  }
+
+  .cover h2{margin:0;font-size:1.05rem}
+  .cover small{opacity:0.9}
+
+  .promo .infos{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+
+  .tagline{color:#4f5757; margin-top:10px; line-height:1.45}
+
+  .side{
+    padding:24px;
+    background:linear-gradient(180deg, #fbfaf7, #f7f5f2);
+    border-left:1px solid rgba(46,59,60,0.03);
+  }
+
+  .meta{
+    background:var(--white);
+    padding:14px;
+    border-radius:10px;
+    border:1px solid rgba(46,59,60,0.04);
+    box-shadow:0 6px 18px rgba(46,59,60,0.03);
+  }
+  .meta h4{margin:0 0 8px}
+  .meta p{margin:0; color:#565c5c; font-size:0.95rem}
+
+  .btn{
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    border:1px solid transparent;
+    background:var(--brick);
+    color:#fff;
+    font-weight:700;
+    text-decoration:none;
+    display:inline-block;
+    text-align:center;
+  }
+
+  footer{
+    margin-top:22px;
+    color:#6b7070;
+    font-size:0.9rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  @media (max-width:980px){
+    .wrap{grid-template-columns:1fr; padding:0}
+    .side{order:2}
+    .main{order:1}
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="main">
+    <header>
+      <div class="logo">SF</div>
+      <div>
+        <h1>L'histoire du Secteur fortifié de Lille</h1>
+        <p>Un ouvrage de référence sur la construction, la vie et la mémoire du secteur fortifié de Lille.</p>
+      </div>
+    </header>
+
+    <!-- Promotion -->
+    <div class="promo">
+      <aside class="cover">
+        <div>
+          <h2>Le secteur fortifié de Lille</h2>
+          <small>D'Halluin à Lecelles</small>
+        </div>
+      </aside>
+
+      <div class="infos">
+        <div>
+          <p class="tagline">Plongez dans une étude richement documentée sur les forts, batteries, et l'organisation défensive qui a façonné la périphérie de Lille. Illustrations, cartes, témoignages et archives inédites.</p>
+
+          <div style="margin-top:14px;">
+            <strong>Auteur :</strong> Groupe Les Blockhaus Lyssois • <strong>Format :</strong> 50 pages • <strong>Édition :</strong> 2025
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>© LesBlockhausLyssois — 2025</div>
+      <div class="muted"><strong>Contact :</strong> lesblockhauslyssois@gmail.com</div>
+    </footer>
+  </main>
+
+  <aside class="side">
+    <div class="meta">
+      <h4>Informations</h4>
+      <p><strong>Titre :</strong> L'histoire du secteur fortifié de Lille</p>
+      <p><strong>Auteur :</strong> Groupe Les Blockhaus Lyssois</p>
+      <p><strong>Pages :</strong> 40 • <strong>Édition :</strong> 2025</p>
+    </div>
+
+    <!-- Bouton Lire le livre -->
+    <div style="margin-top:16px;">
+      <a class="btn" href="livre.pdf" target="_blank">Lire le livre</a>
+    </div>
+  </aside>
+</div>
+</body>
+</html>
 
