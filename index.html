@@ -3,200 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'histoire du Secteur fortifié de Lille</title>
+    <title>Détection d'appareil</title>
     <style>
-        /* CSS intégré */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
         body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
         }
-
-        .container {
-            width: auto;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            display: flex;
-            min-height: 400px;
-        }
-
-        .cover-section {
-            flex: 0 0 200px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f9f9f9;
-        }
-
-        .cover-section img {
-            max-height: 400px;
-            max-width: 100%;
-            object-fit: contain;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .left-section {
-            flex: 0 0 500px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .right-section {
-            flex: 0 0 300px;
-            background-color: #f0f0f0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .book-title {
-            font-size: 1.8em;
-            color: #d35400;
+        #resultat {
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .book-subtitle {
-            font-style: italic;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .book-description {
-            flex: 1;
-            margin-bottom: 20px;
-        }
-
-        .book-description p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        .read-button, .download-button, .website-button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .read-button {
-            background-color: #c0392b;
-            color: white;
-        }
-
-        .download-button {
-            background-color: #c0392b;
-            color: white;
-        }
-
-        .website-button {
-            background-color: #c0392b;
-            color: white;
-        }
-
-        .info-box {
-            background-color: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .info-box h3 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .info-box p {
-            margin-bottom: 5px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f0f0f0;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-
-        .additional-images {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .additional-images img {
-            max-width: 100%;
-            margin: 5px;
-            border-radius: 5px;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Colonne pour la couverture -->
-        <div class="cover-section">
-            <img src="couv.png" alt="Couverture du livre">
-        </div>
+    <h1>Détection de l'appareil</h1>
+    <div id="resultat">Analyse en cours...</div>
 
-        <!-- Contenu principal -->
-        <div class="left-section">
-            <h1 class="book-title">L'histoire du Secteur fortifié de Lille</h1>
-            <p class="book-subtitle">Un ouvrage de référence sur la construction, la vie et la mémoire du secteur fortifié de Lille.</p>
-            <div class="book-description">
-                <p>
-                    Plongez au cœur de l'histoire avec "L'histoire du Secteur Fortifié de Lille". Ce livre vous emmène à la découverte de ce secteur de la ligne Maginot. Explorez les stratégies de défense, richement illustré de plans et de photographies.
-                </p>
-                <p>
-                    Ce guide vous révèle les secrets des casemates qui ont protégé Lille. Un voyage passionnant pour les amateurs d'histoire, les passionnés de patrimoine et tous ceux qui souhaitent percer les mystères de cette partie de la ligne Maginot.
-                </p>
-            </div>
-            <a href="https://docs.google.com/document/d/1cpxG7ZvNPXSCYb0J5WtTFY7UXwVV1Q_tBAO15vNXHf8/edit?tab=t.0#heading=h.pmhi7xtv4ank" class="read-button">Lire le livre</a>
-            <p><strong>Auteur :</strong> Groupe Les Blockhaus Lyssois <strong>• Format :</strong> 40 pages</p>
-        </div>
+    <script>
+        function detecterAppareil() {
+            const userAgent = navigator.userAgent;
+            const estMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+            const estTablette = /(iPad|Tablet|PlayBook|Xoom|Tab)/i.test(userAgent) || (window.innerWidth >= 768 && window.innerWidth <= 1024 && window.innerHeight >= 768);
 
-        <!-- Section de droite -->
-        <div class="right-section">
-            <div class="info-box">
-                <h3>Informations</h3>
-                <p><strong>Titre :</strong> L'histoire du secteur fortifié de Lille</p>
-                <p><strong>Auteur :</strong> Groupe Les Blockhaus Lyssois</p>
-                <p><strong>Pages :</strong> 40</p>
-            </div>
-            <a href="https://drive.google.com/file/d/1AHTHXUA2nN-L4AHYkvbaworrNivm20fk/view?usp=sharing" class="download-button" target="_blank">Télécharger le livre</a>
-            <a href="https://lesblockhauslyssois-lbl.github.io/LBL/" class="website-button" target="_blank">Site des Blockhaus Lyssois</a>
-            <div class="footer">
-                <p>© LesBlockhausLyssois — 2025</p>
-                <p><strong>Contact :</strong> lesblockhauslyssois@gmail.com</p>
-            </div>
-        </div>
-    </div>
+            if (estMobile && !estTablette) {
+                return "Téléphone";
+            } else if (estTablette) {
+                return "Tablette";
+            } else {
+                return "PC";
+            }
+        }
+
+        window.onload = function() {
+            const appareil = detecterAppareil();
+            document.getElementById("resultat").textContent = `Vous utilisez un : ${appareil}`;
+        };
+    </script>
 </body>
 </html>
