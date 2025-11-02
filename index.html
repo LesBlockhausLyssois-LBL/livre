@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détection d'appareil</title>
+    <title>Redirection selon l'appareil</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,8 +18,8 @@
     </style>
 </head>
 <body>
-    <h1>Détection de l'appareil</h1>
-    <div id="resultat">Analyse en cours...</div>
+    <h1>Redirection en cours...</h1>
+    <div id="resultat">Analyse de l'appareil...</div>
 
     <script>
         function detecterAppareil() {
@@ -28,17 +28,21 @@
             const estTablette = /(iPad|Tablet|PlayBook|Xoom|Tab)/i.test(userAgent) || (window.innerWidth >= 768 && window.innerWidth <= 1024 && window.innerHeight >= 768);
 
             if (estMobile && !estTablette) {
-                return "Téléphone";
-            } else if (estTablette) {
-                return "Tablette";
+                return "telephone";
             } else {
-                return "PC";
+                return "pc";
             }
         }
 
         window.onload = function() {
             const appareil = detecterAppareil();
-            document.getElementById("resultat").textContent = `Vous utilisez un : ${appareil}`;
+            document.getElementById("resultat").textContent = `Appareil détecté : ${appareil}. Redirection...`;
+
+            if (appareil === "telephone") {
+                window.location.href = "mobile.html"; // Remplace par l'URL de ta page pour téléphone
+            } else {
+                window.location.href = "computer.html"; // Remplace par l'URL de ta page pour PC/tablette
+            }
         };
     </script>
 </body>
