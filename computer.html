@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'histoire du Secteur fortifié de Lille</title>
+    <style>
+        /* CSS intégré */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: auto;
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 400px;
+        }
+
+        .book-card {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            border-right: 1px solid #e0e0e0;
+            max-width: 50%;
+        }
+
+        .book-card:last-child {
+            border-right: none;
+        }
+
+        .cover-section {
+            flex: 0 0 80px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+
+        .cover-section img {
+            max-height: 350px;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-section {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .right-section {
+            flex: 0 0 auto;
+            min-width: 110px;
+            background-color: #f0f0f0;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .book-title {
+            font-size: 1.3em;
+            color: #d35400;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .book-subtitle {
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 0.85em;
+        }
+
+        .book-description {
+            flex: 1;
+            margin-bottom: 10px;
+        }
+
+        .book-description p {
+            margin-bottom: 8px;
+            text-align: justify;
+            font-size: 0.85em;
+        }
+
+        .read-button, .download-button, .website-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+
+        .read-button {
+            background-color: #c0392b;
+            color: white;
+        }
+
+        .download-button {
+            background-color: #c0392b;
+            color: white;
+        }
+
+        .website-button {
+            background-color: #c0392b;
+            color: white;
+        }
+
+        .coming-soon-button {
+            background-color: #95a5a6;
+            color: white;
+            cursor: not-allowed;
+            padding: 8px;
+            margin-bottom: 8px;
+            font-size: 0.85em;
+        }
+
+        .coming-soon-button:hover {
+            background-color: #95a5a6;
+        }
+
+        .info-box {
+            background-color: white;
+            padding: 8px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 8px;
+        }
+
+        .info-box h3 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-size: 0.9em;
+        }
+
+        .info-box p {
+            margin-bottom: 3px;
+            font-size: 0.8em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 5px;
+            background-color: #f0f0f0;
+            color: #7f8c8d;
+            font-size: 0.75em;
+        }
+
+        .footer p {
+            margin: 2px 0;
+        }
+
+        .additional-images {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .additional-images img {
+            max-width: 100%;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Premier livre: L'histoire du Secteur fortifié de Lille -->
+        <div class="book-card">
+            <div class="cover-section">
+                <img src="couv.png" alt="Couverture du livre">
+            </div>
+
+            <div class="left-section">
+                <h1 class="book-title">L'histoire du Secteur fortifié de Lille</h1>
+                <p class="book-subtitle">Un ouvrage de référence sur la construction, la vie et la mémoire du secteur fortifié de Lille.</p>
+                <div class="book-description">
+                    <p>
+                        Plongez au cœur de l'histoire avec "L'histoire du Secteur Fortifié de Lille". Ce livre vous emmène à la découverte de ce secteur de la ligne Maginot. Explorez les stratégies de défense, richement illustré de plans et de photographies.
+                    </p>
+                    <p>
+                        Ce guide vous révèle les secrets des casemates qui ont protégé Lille. Un voyage passionnant pour les amateurs d'histoire, les passionnés de patrimoine et tous ceux qui souhaitent percer les mystères de cette partie de la ligne Maginot.
+                    </p>
+                </div>
+                <a href="https://docs.google.com/document/d/10ub9mzJnCWGd9FPcld4Z7dLQADwo6Rd7lKab7-y4xcI/edit?usp=sharing" class="read-button">Lire le livre</a>
+                <p><strong>Auteur :</strong> Groupe Les Blockhaus Lyssois <strong>• Format :</strong> 40 pages</p>
+            </div>
+
+            <div class="right-section">
+                <div class="info-box">
+                    <h3>Informations</h3>
+                    <p><strong>Titre :</strong> L'histoire du secteur fortifié de Lille</p>
+                    <p><strong>Auteur :</strong> Groupe Les Blockhaus Lyssois</p>
+                    <p><strong>Pages :</strong> 40</p>
+                </div>
+                <div class="footer">
+                    <p>© LesBlockhausLyssois — 2025</p>
+                    <p><strong>Contact :</strong> lesblockhauslyssois@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deuxième livre: La bataille du secteur fortifié de Lille -->
+        <div class="book-card">
+            <div class="cover-section">
+                <img src="couv2.png" alt="Couverture du livre" style="opacity: 0.7;">
+            </div>
+
+            <div class="left-section">
+                <h1 class="book-title">La bataille du secteur fortifié de Lille</h1>
+                <p class="book-subtitle">Une suite détaillée: la bataille oubliée du secteur fortifié de Lille.</p>
+                <div class="book-description">
+                    <p>
+                        Celui-ci est une suite de notre livre "L'histoire du secteur fortifié de lille". Ce livre a pour vocation d'offrir le plus de détails sur ce que l'on a appelé "la bataille du secteur fortifié de lille" (trop peu expliquée dans notre précédent livre).
+                    </p>
+                    <p>
+                        Une bataille inconnue et qui ne figure dans aucun livre. Une bataille trop oubliée, du fait de sa rapidité. Une bataille enfin racontée !
+                    </p>
+                </div>
+                <button class="coming-soon-button" disabled>En cours de rédaction</button>
+                <p><strong>Auteur :</strong> Groupe Les Blockhaus Lyssois <strong>• Format :</strong> À déterminer</p>
+            </div>
+
+            <div class="right-section">
+                <div class="info-box">
+                    <h3>Informations</h3>
+                    <p><strong>Titre :</strong> La bataille du secteur fortifié de Lille</p>
+                    <p><strong>Auteur :</strong> Groupe Les Blockhaus Lyssois</p>
+                    <p><strong>Pages :</strong> À déterminer</p>
+                    <p style="color: #e67e22; font-weight: bold; margin-top: 10px;">📝 En préparation</p>
+                </div>
+                <a href="https://lesblockhauslyssois-lbl.github.io/LBL/" class="website-button" target="_blank">Site des Blockhaus Lyssois</a>
+                <div class="footer">
+                    <p>© LesBlockhausLyssois — 2025</p>
+                    <p><strong>Contact :</strong> lesblockhauslyssois@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
