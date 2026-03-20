@@ -5,15 +5,52 @@
   <title>Liseuse PDF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- PDF.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
   <style>
     body {
       margin: 0;
+      display: flex;
       font-family: Arial, sans-serif;
       background: #111;
-      color: #fff;
+      color: white;
+    }
+
+    /* MENU GAUCHE */
+    nav {
+      width: 220px;
+      background: #1a1a1a;
+      height: 100vh;
+      padding: 15px;
+      box-sizing: border-box;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    nav h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background: #333;
+    }
+
+    nav a:hover {
+      background: #555;
+    }
+
+    /* CONTENU */
+    main {
+      margin-left: 220px;
+      width: 100%;
     }
 
     header {
@@ -37,15 +74,8 @@
       width: 100%;
       max-width: 800px;
       height: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
       background: white;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     button {
@@ -60,29 +90,49 @@
     button:hover {
       background: #666;
     }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      main {
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="controls">
-    <button onclick="prevPage()">⬅️ Précédent</button>
-    <span id="pageInfo">Page 1</span>
-    <button onclick="nextPage()">Suivant ➡️</button>
-  </div>
-</header>
+<!-- MENU -->
+<nav>
+  <h2>📚 Menu</h2>
+  <a href="#" onclick="scrollToTop()">📖 Le livre</a>
+  <a href="#">⚖️ Mentions légales</a>
+  <a href="#">🔗 Liens associés</a>
+</nav>
 
-<div id="viewer"></div>
+<!-- CONTENU -->
+<main>
+  <header>
+    <button onclick="prevPage()">⬅️</button>
+    <button onclick="nextPage()">➡️</button>
+  </header>
+
+  <div id="viewer"></div>
+</main>
 
 <script>
-  const url = "livrelys1940.pdf"; // Remplace par ton PDF
+  const url = "ton-fichier.pdf";
+  const startPage = 3;
 
   let pdfDoc = null;
-  let currentPage = 1;
   let scale = 1.5;
 
   const viewer = document.getElementById("viewer");
-  const pageInfo = document.getElementById("pageInfo");
 
   pdfjsLib.getDocument(url).promise.then(pdf => {
     pdfDoc = pdf;
@@ -91,7 +141,7 @@
 
   function renderAllPages() {
     viewer.innerHTML = "";
-    for (let i = 1; i <= pdfDoc.numPages; i++) {
+    for (let i = startPage; i <= pdfDoc.numPages; i++) {
       renderPage(i);
     }
   }
@@ -125,6 +175,13 @@
   function nextPage() {
     window.scrollBy({
       top: window.innerHeight,
+      behavior: "smooth"
+    });
+  }
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
       behavior: "smooth"
     });
   }
